@@ -1,0 +1,18 @@
+<!Doctype html>
+<html lang="fr">
+<head>
+   <meta charset="utf-8">
+   <title>formulaire d'inscription</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1> interface admin </h1>
+    <form method="POST" action="{{ url_for('admin_bp.publier')}}">
+	   {{ form.csrf_token() }}
+	   {{ form.mot_passe() }}
+	    <input type="text" name="nom" placeholder="Nom" required> <br>
+		<input type="password" name="mot_passe" placeholder="Mot de passe" required> <span class="toggle-password" onclick="togglePassword()"C:\Users\DELL\Documents\efb12400ad7394cf9c64054792af4d8d.jpg"></span><br>
+		<button type="submit">s'inscrire</button> <br>
+	</form>
+
+       

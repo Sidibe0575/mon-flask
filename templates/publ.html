@@ -1,0 +1,11 @@
+<form method="POST" action="{{ url_for('admin_bp.publier') }}">
+    {{ prod.csrf_token() }}
+	  {{ prod.nom() }}
+	  {{ prod.prix() }}
+	  {{ prod.image() }}
+<input type="text" name="nom" placeholder="nom du produit" required> <br>
+<input type="number" name="prix" placeholder="prix" required> <br>
+<input type="file" name="image"
+	   accept="image/*">
+	<button type="submit">ajouter </button>
+</form>

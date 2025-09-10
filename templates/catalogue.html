@@ -1,0 +1,9 @@
+<!Doctype html>
+<h2> produits disponible</h2>
+{% for produit in produits %}
+  <div>
+     <img src={{{ url_for('static', filename='images/' = produit[3]) }}" width="200">
+	   <p>{{ produit[2] }} fcfa </p>
+	   <button>commander</button>
+  </div>
+{% endfor %}
