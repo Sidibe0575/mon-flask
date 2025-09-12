@@ -1,6 +1,8 @@
 from flask import Flask,render_template,request,redirect,session
 from flask import Blueprint,url_for
 from mod import init_db, ajouter_produit, obtenir_produit
+import sqlite3
+from forms.mean import ProduitFormu
 from forms.mean import DirectInsc
 from forms.mean import ProduitFormu
 from flask_bcrypt import Bcrypt
@@ -45,8 +47,6 @@ def traiter():
         hasher = Bcrypt.generate_password_hash(mot_passe).decode('utf-8')
         print("inscription reussie avec succes")
     return render_template('publ.html')
-import sqlite3
-from routes.mean import ProduitFormu
 @admin_bp.route('/validation', methods=['POST','GET'])
 def publier():
     prod = ProduitFormu()
