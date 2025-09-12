@@ -1,6 +1,5 @@
 from flask import Flask,render_template,request,redirect,session
 from flask import Blueprint,url_for
-from flask_wtf.csrf import generate_csrf
 from mod import init_db, ajouter_produit, obtenir_produit
 from forms.mean import DirectInsc
 from forms.mean import ProduitFormu
