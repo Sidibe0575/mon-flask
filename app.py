@@ -11,7 +11,6 @@ app =  Flask(__name__)
 app.register_blueprint(admin_bp, url_prefix='/admin')
 app.config['SECRET_KEY'] = "manzo2025madissou"
 activation_csrf = CSRFProtect(app)
-init_db()
 @app.route('/index', methods=['POST','GET'])
 def identifier():
     return render_template('index.html')
