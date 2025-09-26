@@ -7,13 +7,14 @@ from routes import admin_routes
 from flask_wtf import CSRFProtect
 from routes.admin_routes import admin_bp
 import sqlite3
+import os
 app =  Flask(__name__)
-app.register_blueprint(admin_bp, url_prefix='/admin')
-app.config['SECRET_KEY'] = "manzo2025madissou"
-activation_csrf = CSRFProtect(app)
 @app.route('/index', methods=['POST','GET'])
 def identifier():
     return render_template('index.html')
+app.register_blueprint(admin_bp, url_prefix='/admin')
+app.config['SECRET_KEY'] = "manzo2025madissou"
+activation_csrf = CSRFProtect(app)
 @app.route('/afficher')
 def affiche():
     nom = request.form['nom']
